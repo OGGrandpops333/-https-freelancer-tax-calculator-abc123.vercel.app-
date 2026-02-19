@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Freelancer Tax Calculator</h1>
+        
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="name">What is your name?</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="income">Annual Income ($)</label>
+                <input type="number" id="income" name="income" required placeholder="Enter your annual income" min="0" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="expenses">Business Expenses ($)</label>
+                <input type="number" id="expenses" name="expenses" required placeholder="Enter your business expenses" min="0" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                    <option value="">Select your state</option>
+                    <option value="CA">California</option>
+                    <option value="NY">New York</option>
+                    <option value="TX">Texas</option>
+                    <option value="FL">Florida</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate Tax</button>
+        </form>
+
+        <div id="results" class="results hidden">
+            <h2>Tax Calculation Results</h2>
+            <div id="greeting"></div>
+            <div class="result-item">
+                <span class="label">Taxable Income:</span>
+                <span class="value" id="taxableIncome">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Federal Tax (Estimated):</span>
+                <span class="value" id="federalTax">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Self-Employment Tax:</span>
+                <span class="value" id="selfEmploymentTax">$0.00</span>
+            </div>
+            <div class="result-item total">
+                <span class="label">Total Tax Liability:</span>
+                <span class="value" id="totalTax">$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
